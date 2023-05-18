@@ -5,6 +5,7 @@ import CreateAccountPage from './Pages/CreateAccountPage';
 import LoginPage from './Pages/LoginPage';
 import SleepInputPage from './Pages/SleepInputPage';
 import DashboardPage from './Pages/DashboardPage';
+import HomePage from './Pages/HomePage';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -18,19 +19,23 @@ function App() {
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
             <Route 
-              path="/matchup" 
+              path="/"
+              element={<HomePage />}
+            />
+            <Route 
+              path="/Login" 
               element={<LoginPage />}
             />
             <Route 
-              path="/" 
+              path="/CreateAccount" 
               element={<CreateAccountPage />}
             />
             <Route 
-              path="/matchup/:id" 
+              path="/SleepInput" 
               element={<SleepInputPage />}
             />
             <Route 
-              path="*"
+              path="/Dash"
               element={<DashboardPage />}
             />
           </Routes>

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NavigationBar = () => {
+const HomePage = () => {
   return (
-    <div className="navbar">
+    <div className="homepage">
       <button>Login</button>
       <button>SleepInput</button>
       <button>Dashboard</button>
@@ -11,4 +11,4 @@ const NavigationBar = () => {
   );
 };
 
-export default NavigationBar;
+export default HomePage;
