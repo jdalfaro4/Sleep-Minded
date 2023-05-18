@@ -18,12 +18,12 @@ function App() {
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
             <Route 
-              path="/" 
-              element={<CreateAccountPage />}
-            />
-            <Route 
               path="/matchup" 
               element={<LoginPage />}
+            />
+            <Route 
+              path="/" 
+              element={<CreateAccountPage />}
             />
             <Route 
               path="/matchup/:id" 
