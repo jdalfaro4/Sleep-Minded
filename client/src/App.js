@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import AccountPage from './pages/CreateAccountPage';
-import Login from './pages/LoginPage';
-import SleepInput from './pages/SleepInputPage';
-import Dashboard from './pages/DashboardPage';
+import AccountPage from './Pages/CreateAccountPage';
+import Login from './Pages/LoginPage';
+import SleepInput from './Pages/SleepInputPage';
+import Dashboard from './Pages/DashboardPage';
 
 const client = new ApolloClient({
   uri: '/graphql',
