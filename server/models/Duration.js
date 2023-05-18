@@ -3,12 +3,12 @@ const { Schema, model } = require('mongoose');
 
 const durationSchema = new Schema({
     sleepHours: {
-        type: Integer,
+        type: Number,
         required: true,
     },
 
     sleepQuality: {
-        type: Integer,
+        type: Number,
         required: true,
     },
 });

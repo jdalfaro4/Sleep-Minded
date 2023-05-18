@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
 
@@ -14,13 +14,14 @@ const typeDefs = gql`
   }
 
   type Query {
-  //  tech: [Tech] //
+
+quality: quality
     Duration(_id: String): [Duration]
   }
 
   type Mutation {
-    createDuration(sleepHours: String!, sleepQuality: String!): duration
+    createDuration(sleepHours: String!, sleepQuality: String!): Duration
   }
 `;
 
-module.exports = typeDefs
+module.exports = typeDefs;

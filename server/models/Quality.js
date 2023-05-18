@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const qualitySchema = new Schema({
     quality: {
-        type: Integer,
+        type: Number,
         required: true,
         unique: true,
     },
