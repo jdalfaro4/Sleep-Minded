@@ -8,7 +8,7 @@ const CreateAccountPage = ({ handleGoBack }) => {
     <div className="container">
       <h2>Create Account</h2>
       <form>
-       
+
         <label htmlFor="username">Username:</label>
         <input
           type="text"

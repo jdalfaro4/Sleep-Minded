@@ -6,7 +6,7 @@ const LoginPage = () => {
     <div className="container">
       <h2>Login</h2>
       <form>
-       
+
         <label>Username:</label>
         <input
           type="text"
