@@ -1,4 +1,5 @@
-const Tech = require('./Tech');
-const Matchup = require('./Matchup');
+const Quality = require('./Quality');
+const Duration = require('./Duration');
 
-module.exports = { Tech, Matchup };
+module.exports = { Quality, Duration };
+
