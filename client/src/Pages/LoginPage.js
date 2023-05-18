@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 
-
 const LoginPage = () => {
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+  };
+
+
   return (
     <div className="container">
       <h2>Login</h2>
@@ -34,7 +50,7 @@ const LoginPage = () => {
         <button type="submit" onClick={handleLogin}>Login</button>
       </form>
       <div>
-        <button onClick={handleCreateAccount}>Create an Account</button>
+        {/* <button onClick={handleCreateAccount}>Create an Account</button> */}
       </div>
     </div>
   );

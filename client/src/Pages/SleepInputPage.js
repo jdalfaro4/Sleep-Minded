@@ -4,6 +4,30 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const SleepInputPage = () => {
 
+  const [selectedDate, setSelectedDate] = useState('');
+    const [qualityOfSleep, setQualityOfSleep] = useState('');
+    const [hoursOfSleep, setHoursOfSleep] = useState('');
+  
+  
+    const handleDateChange = (date) => {
+      setSelectedDate(date);
+    };
+  
+  
+    const handleQualityChange = (e) => {
+      setQualityOfSleep(Number(e.target.value));
+    };
+  
+  
+    const handleHoursChange = (e) => {
+      setHoursOfSleep(e.target.value);
+    };
+  
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    };
+
   return (
     <div>
       <h2>Forum</h2>
