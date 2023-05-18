@@ -23,4 +23,4 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = typeDef
+module.exports = typeDefs

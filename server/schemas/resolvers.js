@@ -15,7 +15,7 @@ const resolvers = {
       const Duration = await Duration.create(args);
       return Duration;
     }
-   }
+  }
 }
 
 module.exports = resolvers;
