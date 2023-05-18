@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
   type quality {
     _id: ID!
     name: String!
@@ -14,7 +15,7 @@ const typeDefs = gql`
 
   type Query {
   //  tech: [Tech] //
-    Duration(_id: String): [Durtion]
+    Duration(_id: String): [Duration]
   }
 
   type Mutation {
