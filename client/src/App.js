@@ -6,6 +6,10 @@ import LoginPage from './Pages/LoginPage';
 import SleepInputPage from './Pages/SleepInputPage';
 import DashboardPage from './Pages/DashboardPage';
 import HomePage from './Pages/HomePage';
+import CustomChart from './Pages/Chart';
+import { CategoryScale } from "chart.js";
+import Chart from "chart.js/auto";
+Chart.register(CategoryScale);
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -18,23 +22,27 @@ function App() {
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
-            <Route 
+            <Route
               path="/"
               element={<HomePage />}
             />
-            <Route 
-              path="/Login" 
+          <Route
+              path="/Chart"
+              element={<CustomChart />}
+            />
+            <Route
+              path="/Login"
               element={<LoginPage />}
             />
-            <Route 
-              path="/CreateAccount" 
+            <Route
+              path="/CreateAccount"
               element={<CreateAccountPage />}
             />
-            <Route 
-              path="/SleepInput" 
+            <Route
+              path="/SleepInput"
               element={<SleepInputPage />}
             />
-            <Route 
+            <Route
               path="/Dash"
               element={<DashboardPage />}
             />
