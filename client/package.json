@@ -1,8 +1,7 @@
 {
-    "name": "client",
+    "name": "sleep-minded",
     "version": "0.1.0",
     "private": true,
-    "proxy": "http://127.0.0.1",
     "dependencies": {
         "@apollo/client": "^3.5.8",
         "@testing-library/jest-dom": "^5.11.6",
@@ -19,27 +18,27 @@
         "web-vitals": "^3.3.1"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
+      "start": "react-scripts start --port 3000",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
     },
     "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
+      "extends": [
+        "react-app",
+        "react-app/jest"
+      ]
     },
     "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
     }
-}
+  }

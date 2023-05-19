@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-
+import LoginPage from './LoginPage';
 
 const CreateAccountPage = ({ handleGoBack }) => {
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const [redirectToLoginPage, setRedirectToLoginPage] = useState(false);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
-
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -18,14 +16,17 @@ const CreateAccountPage = ({ handleGoBack }) => {
 
   const handleCreateAccount = (event) => {
     event.preventDefault();
+    setRedirectToLoginPage(true);
   };
 
+  if (redirectToLoginPage) {
+    return <LoginPage />;
+  }
 
   return (
     <div className="container">
       <h2>Create Account</h2>
       <form>
-
         <label htmlFor="username">Username:</label>
         <input
           type="text"
@@ -36,8 +37,6 @@ const CreateAccountPage = ({ handleGoBack }) => {
           onChange={handleUsernameChange}
           required
         />
-
-
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -48,16 +47,10 @@ const CreateAccountPage = ({ handleGoBack }) => {
           onChange={handlePasswordChange}
           required
         />
-
-
         <button type="submit" onClick={handleCreateAccount}>Create Account</button>
       </form>
-      <div className="center">
-        <button onClick={handleGoBack}>Go Back</button>
-      </div>
     </div>
   );
 };
-
 
 export default CreateAccountPage;
