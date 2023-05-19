@@ -5,7 +5,7 @@ const resolvers = {
     quality: async () => {
       return quality.find({});
     },
-    Duration: async (parent, { _id }) => {
+    duration: async (parent, { _id }) => {
       const params = _id ? { _id } : {};
       return Duration.find(params);
     },
