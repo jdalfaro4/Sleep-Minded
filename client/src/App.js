@@ -4,7 +4,6 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import CreateAccountPage from './Pages/CreateAccountPage';
 import LoginPage from './Pages/LoginPage';
 import SleepInputPage from './Pages/SleepInputPage';
-import DashboardPage from './Pages/DashboardPage';
 import HomePage from './Pages/HomePage';
 import CustomChart from './Pages/Chart';
 import { CategoryScale } from "chart.js";
@@ -41,10 +40,6 @@ function App() {
             <Route
               path="/SleepInput"
               element={<SleepInputPage />}
-            />
-            <Route
-              path="/Dash"
-              element={<DashboardPage />}
             />
           </Routes>
         </div>

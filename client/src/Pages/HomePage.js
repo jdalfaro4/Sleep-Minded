@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import CreateAccountPage from './CreateAccountPage';
 import LoginPage from './LoginPage';
 import SleepInputPage from './SleepInputPage';
-import DashboardPage from './DashboardPage';
+import Chart from './Chart';
 
 const HomePage = () => {
   const [activeComponent, setActiveComponent] = useState('LoginPage');
@@ -22,8 +22,8 @@ const HomePage = () => {
     case 'SleepInputPage':
       componentToRender = <SleepInputPage />;
       break;
-    case 'DashboardPage':
-      componentToRender = <DashboardPage />;
+    case 'Chart':
+      componentToRender = <Chart />;
       break;
     default:
       componentToRender = <LoginPage />;
@@ -34,7 +34,7 @@ const HomePage = () => {
       <div className="navbar">
         {/* <button onClick={() => handleNavigationClick('LoginPage')}>Login</button> */}
         <button onClick={() => handleNavigationClick('SleepInputPage')}>SleepInput</button>
-        <button onClick={() => handleNavigationClick('DashboardPage')}>Dashboard</button>
+        <button onClick={() => handleNavigationClick('Chart')}>Chart</button>
         <button onClick={() => handleNavigationClick('LoginPage')}>Logout</button>
       </div>
       {componentToRender}
