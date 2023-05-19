@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,208 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* Background image */
+
+.background-image {
+  background-image: url('/src/Images/StarrySky.jpg'); 
+  height: 100vh;
+  min-height: 2000px;
+  text-decoration: solid;
+  background-attachment: fixed; 
 }
+
+/* Navbar */
+
+.km{
+    font-family:Arial, Helvetica, sans-serif; 
+    padding-left: 15px; 
+    font-size: 30px !important; 
+    color: white; 
+}
+
+.navbar-nav{
+  color: white; 
+}
+
+a:hover{
+    cursor: grab; 
+}
+
+.active{
+    text-decoration: solid; 
+}
+/* Home */
+
+.about-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+about-inner {
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.774);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 10px;
+}
+
+
+.hero {
+  width: 100%;
+  text-align: center;
+  font-size: 50px; 
+  color: white; 
+  line-height: 1.1;
+  padding: 20px 10px;
+  margin-top: 200px; 
+}
+
+
+  .about-form{
+    color: white; 
+    width: 300px !important; 
+    margin: 20px; 
+    font-size: 20px; 
+  }
+
+  .hours{
+    width: 100px; 
+  }
+
+.submit{
+align-items: center; 
+}
+  
+
+  /* Contact */
+
+  .contact-container{
+    padding-top: 100px; 
+  }
+  .enter{
+    padding-top: 50px; 
+    width: 75%; 
+    color: white; 
+  }
+
+  .form-group{
+    padding: 10px; 
+  }
+
+  /* Portfolio */
+
+  .portfolio-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.card-deck {
+  width: 90%;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #8eaed29c;
+  border: none;
+  margin: 10px;
+  min-height: 350px;
+  padding: 20px;
+}
+
+.card-footer {
+  background: none;
+  border: none;
+}
+
+
+    /*login page*/
+
+    .register{
+      padding-top: 20px; 
+      color: white; 
+    }
+
+    .question{
+      font-size: 15px; 
+    }
+
+
+  /*Signup page*/
+  .main_login {
+    background-color: none; 
+    border-radius: 20px;
+    padding: 50px 0;
+    height: 300px;
+    width: 100%;
+    place-content: center;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(6, 2, 33, 0.6);
+  }
+
+  .signup{
+    margin: 10px; 
+  }
+
+
+   /*footer*/
+
+   .footer{
+    color: white; 
+   }
+
+
+  /* Media Queries for screens larger than mobile*/
+
+  /* Media Queries for screens larger than mobile*/
+@media screen and (min-width: 900px) { 
+  .about {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1300px;
+    width: 100%;
+}
+.about-inner {
+    background-color: transparent;
+    border: none;
+    max-width: 1300px;
+    max-width: 650px;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.hero-inner {
+    font-size: 60px;
+    text-align: left;
+    margin: 130px 0 0 50px;
+    width: 800px;
+}
+
+    .form-row{
+        width: 30%; 
+    }
+    .resume{
+        padding-top: 30px; 
+        width: 100vw; 
+    height: 100vh; 
+    }
+    .portfolio-wrapper {
+      align-items: flex-start;
+      flex-direction: row;
+  }
+  .card-deck {
+    height: 100%;
+    max-width: 800px;
+}
+
+.card {
+    min-height: 800px;
+}
+  };
