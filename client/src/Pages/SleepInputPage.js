@@ -67,9 +67,12 @@ const SleepInputPage = () => {
             <div className="form-row question-container">
               <div className="about-form container">
                 <div className="row">
-                  <label className="col">Date:</label>
-                  <DatePicker className="col" selected={selectedDate} onChange={handleDateChange} />
+                  <label class="col" style={{ paddingRight: 0 }}>Date:</label>
+                  <div className="col" style={{ padding: 0 }}>
+                    <DatePicker className="col datepicker" selected={selectedDate} onChange={handleDateChange} />
+                  </div>
                 </div>
+
               </div>
 
               <div className="form-row about-form container">
