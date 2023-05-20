@@ -1,42 +1,3 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 /* Background image */
 
 .background-image {
@@ -49,7 +10,7 @@
 
 /* Navbar */
 
-.km{
+.nav-container{
     font-family:Arial, Helvetica, sans-serif; 
     padding-left: 15px; 
     font-size: 30px !important; 
@@ -76,7 +37,7 @@ a:hover{
 .submit{
   margin: 10px; 
 }
-/* Home */
+/* Sleep-Input page */
 
 .about-page {
   align-items: center;
@@ -120,7 +81,7 @@ align-items: center;
 }
   
 
-  /* Contact */
+  /* Login */
 
   .contact-container{
     padding-top: 100px; 
@@ -135,50 +96,29 @@ align-items: center;
     padding: 10px; 
   }
 
-  /* Portfolio */
+  /* Chart */
 
-  .portfolio-wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-
-.card-deck {
-  width: 90%;
-  margin-bottom: 40px;
-}
-
-.card {
-  background-color: #8eaed29c;
-  border: none;
-  margin: 10px;
-  min-height: 350px;
-  padding: 20px;
-}
-
-.card-footer {
-  background: none;
-  border: none;
-}
+  .line-container{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding-top: 100px; 
+  }
+  .line{
+    width: 400px !important; 
+    height: 200px !important; 
+    background-color: rgba(255,255,255) !important; 
+    margin-top: 50px; 
+  }
 
 
-    /*login page*/
+    /*Sign In*/
 
     .register{
       padding-top: 20px; 
       color: white; 
     }
 
-    .question{
-      font-size: 15px; 
-    }
-
-
-  /*Signup page*/
   .main_login {
     background-color: none; 
     border-radius: 20px;
@@ -194,15 +134,10 @@ align-items: center;
     margin: 10px; 
   }
 
+  .question{
+    font-size: 15px; 
+  }
 
-   /*footer*/
-
-   .footer{
-    color: white; 
-   }
-
-
-  /* Media Queries for screens larger than mobile*/
 
   /* Media Queries for screens larger than mobile*/
 @media screen and (min-width: 900px) { 
@@ -228,24 +163,13 @@ align-items: center;
     width: 800px;
 }
 
-    .form-row{
+.form-row{
         width: 30%; 
     }
-    .resume{
-        padding-top: 30px; 
-        width: 100vw; 
-    height: 100vh; 
-    }
-    .portfolio-wrapper {
-      align-items: flex-start;
-      flex-direction: row;
+  
+  .line{
+    width: 900px !important; 
+    height: 500px !important; 
+    background-color: rgba(255,255,255) !important; 
   }
-  .card-deck {
-    height: 100%;
-    max-width: 800px;
-}
-
-.card {
-    min-height: 800px;
-}
-  };
+};
