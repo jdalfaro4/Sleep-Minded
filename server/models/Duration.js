@@ -1,15 +1,17 @@
 
-const { Schema, model } = require('mongoose');
+const { Schema, DataTypes, model } = require('mongoose');
 
 const durationSchema = new Schema({
     sleepHours: {
         type: Number,
         required: true,
     },
-
-    sleepQuality: {
-        type: Number,
-        required: true,
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id',
+        },
     },
 });
 

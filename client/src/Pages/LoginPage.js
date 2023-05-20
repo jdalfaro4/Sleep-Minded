@@ -3,13 +3,13 @@ import CreateAccountPage from './CreateAccountPage';
 import SleepInputPage from './SleepInputPage';
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showCreateAccountPage, setShowCreateAccountPage] = useState(false);
   const [redirectToSleepInputPage, setRedirectoSleepInputPage] = useState(false);
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
@@ -68,13 +68,13 @@ const LoginPage = () => {
       <div className="contact-container d-flex flex-column align-items-center justify-content-center">
         <form className="form-row enter">
           <div className="form-group contact-form">
-            <label htmlFor="exampleFormControlTextarea1">Username</label>
+            <label htmlFor="exampleFormControlTextarea1">Email</label>
             <input type="text"
-              id="username"
-              name="username"
-              placeholder="Enter your username"
-              value={username}
-              onChange={handleUsernameChange}
+              id="email"
+              name="email"
+              placeholder="Enter your Email"
+              value={email}
+              onChange={handleEmailChange}
               required className="form-control" />
           </div>
 
