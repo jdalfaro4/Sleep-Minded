@@ -37,11 +37,13 @@ const HomePage = () => {
 
         <nav className="navbar navbar-expand-lg sticky-top back">
           <a className="navbar-brand nav-container">SleepMinded</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
-          </button>
+          <div className="btn-group">
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon" style={{ color: "red" }} />
+            </button>
+          </div>
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav d-flex align-items-end" style={{ paddingRight: "20px" }}>
               <li className="nav-item">
                 <a className="nav-link" style={{ color: "white" }} id="contact" onClick={() => handleNavigationClick('SleepInputPage')}>Sleep Input</a>
               </li>
