@@ -18,7 +18,7 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_DURATION = gql`
-  mutation addDuration($sleepHours: String!) {
+  mutation AddDuration($sleepHours: String!) {
     addDuration(sleepHours: $sleepHours) {
       duration {
         sleepHours
@@ -28,7 +28,7 @@ export const ADD_DURATION = gql`
 `;
 
 export const ADD_QUALITY = gql`
-  mutation addQuality($sleepQuality: String!) {
+  mutation AddQuality($sleepQuality: String!) {
     addQuality(sleepQuality: $sleepQuality) {
       quality {
         sleepQuality
