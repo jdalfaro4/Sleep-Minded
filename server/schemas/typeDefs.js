@@ -14,12 +14,18 @@ const typeDefs = gql`
     _id: ID
   }
 
+  type User{
+    _id: ID
+    email: String
+  }
+
   type Query {
     quality(_id: ID!): Quality
     length(_id: ID!): Length
     duration(_id: ID!): Duration
   }
   type Mutation {
+    addUser(email: String!, password: String!): User
     createDuration(sleepHours: String!, sleepQuality: String!): Duration
   }
 `;

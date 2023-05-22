@@ -7,7 +7,7 @@ const qualitySchema = new Schema({
         unique: true,
     },
     user_id: {
-        type: DataTypes.INTEGER,
+        type: Number,
         references: {
             model: 'user',
             key: 'id',

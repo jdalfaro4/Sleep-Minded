@@ -11,7 +11,7 @@ const Signup = () => {
         email: '',
         password: '',
     });
-    const [addUser, { error, data }] = useMutation(ADD_USER);
+    const [AddUser, { error, data }] = useMutation(ADD_USER);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -27,12 +27,15 @@ const Signup = () => {
         console.log(formState);
 
         try {
-            const { data } = await addUser({
-                variables: { ...formState },
+            const { data } = await AddUser({
+                variables: { email: formState.email, password: formState.password },
             });
 
             Auth.login(data.addUser.token);
         } catch (e) {
+            if(e.networkError){
+                console.log(e.networkError)
+            }
             console.error(e);
         }
     };
@@ -50,14 +53,6 @@ const Signup = () => {
                             </p>
                         ) : (
                             <form onSubmit={handleFormSubmit}>
-                                <input
-                                    className="form-input"
-                                    placeholder="Your username"
-                                    name="username"
-                                    type="text"
-                                    value={formState.name}
-                                    onChange={handleChange}
-                                />
                                 <input
                                     className="form-input"
                                     placeholder="Your email"

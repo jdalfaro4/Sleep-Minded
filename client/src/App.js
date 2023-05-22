@@ -11,7 +11,7 @@ import Chart from "chart.js/auto";
 Chart.register(CategoryScale);
 
 const client = new ApolloClient({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache(),
 });
 

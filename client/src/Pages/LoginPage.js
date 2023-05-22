@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CreateAccountPage from './CreateAccountPage';
+import SignupPage from './Signup';
 import SleepInputPage from './SleepInputPage';
 
 const LoginPage = () => {
@@ -21,13 +21,13 @@ const LoginPage = () => {
     setRedirectoSleepInputPage(true);
   };
 
-  const handleCreateAccount = (event) => {
+  const handleSignupPage = (event) => {
     event.preventDefault();
     setShowCreateAccountPage(true);
   };
 
   if (showCreateAccountPage) {
-    return <CreateAccountPage />;
+    return <SignupPage />;
   }
 
   if (redirectToSleepInputPage) {
@@ -91,7 +91,7 @@ const LoginPage = () => {
         </form>
         <input className="btn btn-primary signin" type="submit" onClick={handleLogin} value="Sign In"></input>
         <div class="register">
-          <h5 class="question">Not a Member? <a onClick={handleCreateAccount}>Create Account</a></h5>
+          <h5 class="question">Not a Member? <button onClick={handleSignupPage}>Create Account</button></h5>
         </div>
       </div>
 

@@ -7,7 +7,7 @@ const durationSchema = new Schema({
         required: true,
     },
     user_id: {
-        type: DataTypes.INTEGER,
+        type: Number,
         references: {
             model: 'user',
             key: 'id',
