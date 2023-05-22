@@ -17,11 +17,20 @@ export const ADD_USER = gql`
 
 `;
 
-export const CHANGE_DURATION = gql`
-  mutation changeDuration($sleepHours: String!, $sleepQuality: String!) {
-    changeDuration(sleepHours: $sleepHours, sleepQuality: $sleepQuality) {
+export const ADD_DURATION = gql`
+  mutation addDuration($sleepHours: String!) {
+    addDuration(sleepHours: $sleepHours) {
       duration {
         sleepHours
+      }
+    }
+  }
+`;
+
+export const ADD_QUALITY = gql`
+  mutation addQuality($sleepQuality: String!) {
+    addQuality(sleepQuality: $sleepQuality) {
+      quality {
         sleepQuality
       }
     }
