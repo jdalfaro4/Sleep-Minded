@@ -29,7 +29,7 @@ class AuthService {
 
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/');
+        window.location.assign('/SleepInput');
     }
 
     logout() {
@@ -37,8 +37,8 @@ class AuthService {
         window.location.reload();
     }
 }
-
-export default new AuthService();
+const Auth = new AuthService();
+export default Auth;
 // import decode from 'jwt-decode';
 
 // class AuthService {

@@ -1,22 +1,22 @@
 [
 {
-  "Hours": 10,
+  "sleepHours": 10,
   "Quality": 5
 },
 {
-  "Hours": 8,
+  "sleepHours": 8,
   "Quality": 4
 },
 {
-  "Hours": 6,
+  "sleepHours": 6,
   "Quality": 2
 },
 {
-  "Hours": 9,
+  "sleepHours": 9,
   "Quality": 5
 },
 {
-  "Hours": 7,
+  "sleepHours": 7,
   "Quality": 4
 }
 ]

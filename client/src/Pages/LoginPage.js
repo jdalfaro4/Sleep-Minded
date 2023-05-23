@@ -1,106 +1,102 @@
 import React, { useState } from 'react';
-import SignupPage from './Signup';
-import SleepInputPage from './SleepInputPage';
+// import SignupPage from './Signup';
+// import SleepInputPage from './SleepInputPage';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 
-const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showCreateAccountPage, setShowCreateAccountPage] = useState(false);
-  const [redirectToSleepInputPage, setRedirectoSleepInputPage] = useState(false);
+import Auth from '../utils/auth';
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+const Login = (props) => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleLogin = (event) => {
+  // submit form
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    setRedirectoSleepInputPage(true);
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      if (e.networkError) {
+        console.log(e.networkError)
+      }
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
   };
-
-  const handleSignupPage = (event) => {
-    event.preventDefault();
-    setShowCreateAccountPage(true);
-  };
-
-  if (showCreateAccountPage) {
-    return <SignupPage />;
-  }
-
-  if (redirectToSleepInputPage) {
-    return <SleepInputPage />;
-  }
 
   return (
-    // <div className="container">
-    //   <h2>Login</h2>
-    //   <form>
-    //     <label>Username:</label>
-    //     <input
-    //       type="text"
-    //       id="username"
-    //       name="username"
-    //       placeholder="Enter your username"
-    //       value={username}
-    //       onChange={handleUsernameChange}
-    //       required
-    //     />
-    //     <label>Password:</label>
-    //     <input
-    //       type="password"
-    //       id="password"
-    //       name="password"
-    //       placeholder="Enter your password"
-    //       value={password}
-    //       onChange={handlePasswordChange}
-    //       required
-    //     />
-    //     <button type="submit" onClick={handleLogin}>Login</button>
-    //   </form>
-    //   <div>
-    //     <button onClick={handleCreateAccount}>Create an Account</button>
-    //   </div>
-    // </div>
-    <div className="background-image">
-      <div className="contact-container d-flex flex-column align-items-center justify-content-center">
-        <form className="form-row enter">
-          <div className="form-group contact-form">
-            <label htmlFor="exampleFormControlTextarea1">Email</label>
-            <input type="text"
-              id="email"
-              name="email"
-              placeholder="Enter your Email"
-              value={email}
-              onChange={handleEmailChange}
-              required className="form-control" />
-          </div>
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+          <div className="card-body">
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn btn-block btn-info"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
 
-          <div className="form-group">
-            <label htmlFor="exampleFormControlTextarea1">Password</label>
-            <input type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={handlePasswordChange}
-              required className="form-control" />
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
           </div>
-        </form>
-        <input className="btn btn-primary signin" type="submit" onClick={handleLogin} value="Sign In"></input>
-        <div class="register">
-          <h5 class="question">Not a Member? <button onClick={handleSignupPage}>Create Account</button></h5>
         </div>
       </div>
-
-
-    </div>
-
+    </main>
   );
 };
 
-export default LoginPage;
+export default Login;
+
 
 
