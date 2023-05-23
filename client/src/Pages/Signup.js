@@ -6,6 +6,8 @@ import { ADD_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+import "../App.css";
+
 const Signup = () => {
     const [formState, setFormState] = useState({
         email: '',
@@ -42,9 +44,9 @@ const Signup = () => {
 
     return (
         <main className="flex-row justify-center mb-4">
-            <div className="col-12 col-lg-10">
+            <div className="col-lg-4 col-md-8 col-sm-10 signup-center">
                 <div className="card">
-                    <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+                    <h4 className="card-header bg-dark text-light p-2">Sign Up with SleepMinded</h4>
                     <div className="card-body">
                         {data ? (
                             <p>
@@ -70,7 +72,7 @@ const Signup = () => {
                                     onChange={handleChange}
                                 />
                                 <button
-                                    className="btn btn-block btn-primary"
+                                    className="btn btn-block btn-primary btn-spacing"
                                     style={{ cursor: 'pointer' }}
                                     type="submit"
                                 >

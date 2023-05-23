@@ -38,7 +38,7 @@ const HomePage = () => {
         <nav className="navbar navbar-expand-lg sticky-top back">
           <a className="navbar-brand nav-container">SleepMinded</a>
           <div className="btn-group">
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler burger-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" style={{ color: "red" }} />
             </button>
           </div>

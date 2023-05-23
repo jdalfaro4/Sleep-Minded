@@ -90,8 +90,8 @@ const LoginPage = () => {
           </div>
         </form>
         <input className="btn btn-primary signin" type="submit" onClick={handleLogin} value="Sign In"></input>
-        <div class="register">
-          <h5 class="question">Not a Member? <button onClick={handleSignupPage}>Create Account</button></h5>
+        <div className="register">
+          <h5 className="question">Not a Member? <button className="btn btn-link text-warning create-account-btn" onClick={handleSignupPage}>Create Account</button></h5>
         </div>
       </div>
 
