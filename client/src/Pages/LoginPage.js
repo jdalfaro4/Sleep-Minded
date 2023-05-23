@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-// import SignupPage from './Signup';
+import SignupPage from './Signup';
 // import SleepInputPage from './SleepInputPage';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-
 import Auth from '../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [showSignup, setShowSignup] = useState(false);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -44,6 +44,14 @@ const Login = (props) => {
       password: '',
     });
   };
+
+  const handleSignUpClick = () => {
+    setShowSignup(true);
+  };
+
+  if (showSignup) {
+    return <SignupPage />;
+  }
 
   return (
     <main className="flex-row justify-center mb-4">
@@ -89,6 +97,13 @@ const Login = (props) => {
                 {error.message}
               </div>
             )}
+            <button
+                  className="btn btn-block btn-info"
+                  style={{ cursor: 'pointer' }}
+                  onClick={handleSignUpClick}
+                >
+                  Sign Up
+            </button>
           </div>
         </div>
       </div>
@@ -97,6 +112,3 @@ const Login = (props) => {
 };
 
 export default Login;
-
-
-
