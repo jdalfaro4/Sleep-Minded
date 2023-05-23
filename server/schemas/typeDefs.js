@@ -23,6 +23,11 @@ const typeDefs = gql`
     user: User
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     user: User
     quality(_id: ID!): Quality
