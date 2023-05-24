@@ -13,8 +13,6 @@ const typeDefs = gql`
   type User {
     _id: ID
     email: String
-    firstName: String
-    lastName: String
     duration: Duration
     quality: Quality
   }
@@ -23,19 +21,16 @@ const typeDefs = gql`
     user: User
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
-
   type Query {
     user: User
     quality(_id: ID!): Quality
     duration(_id: ID!): Duration
   }
+
   type Mutation {
-    addUser(email: String!, password: String!): Auth
-    createDuration(sleepHours: Int!, sleepQuality: Int!): Duration
+     addUser(email: String!, password: String!): Auth
+    createDuration(sleepHours: Int!): Duration
+    createQuality(quality: Int!): Quality
     login(email: String!, password: String!): Auth
   }
 `;

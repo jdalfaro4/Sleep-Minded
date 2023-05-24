@@ -1,7 +1,7 @@
-const Quality = require('./Quality');
-const Duration = require('./Duration');
+const SleepInstance = require('./SleepInstance');
+// const Duration = require('./Duration');
 const User = require('./user');
 
 
-module.exports = { Quality, Duration, User };
+module.exports = { SleepInstance, User };
 
