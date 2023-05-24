@@ -31,9 +31,6 @@ sleepHours
 }
 }
 }
-
-
-
 `
 export const QUERY_USER_QUALITY =gql`
 query getQuality($quality: ID){

@@ -1,16 +1,16 @@
 
-const { Quality, Duration, User } = require("../models");
+const { SleepInstance, User } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     quality: async () => {
-      return Quality.find({});
+      return SleepInstance.find({});
     },
     duration: async (parent, { _id }) => {
       const params = _id ? { _id } : {};
-      return Duration.find(params);
+      return SleepInstance.find(params);
     },
     user: async (parent, args, context) => {
       if (context.user) {
@@ -53,12 +53,12 @@ const resolvers = {
 
     createDuration: async (_parent, args) => {
 console.log(args);
-      const duration = await Duration.create(args);
+      const duration = await SleepInstance.create(args);
       return duration;
     },
     createQuality: async (_parent, args) => {
       console.log(args);
-            const quality = await Quality.create(args);
+            const quality = await SleepInstance.create(args);
             return quality;
           },
   },

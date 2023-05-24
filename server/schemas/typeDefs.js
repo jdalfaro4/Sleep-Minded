@@ -21,16 +21,12 @@ const typeDefs = gql`
     user: User
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
-
   type Query {
     user: User
     quality(_id: ID!): Quality
     duration(_id: ID!): Duration
   }
+
   type Mutation {
      addUser(email: String!, password: String!): Auth
     createDuration(sleepHours: Int!): Duration

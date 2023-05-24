@@ -29,14 +29,18 @@ const [addQuality, {err}]=useMutation(ADD_QUALITY);
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Submitted data:', selectedDate, qualityOfSleep, hoursOfSleep);
+
 const {data:sleepDuration}=addDuration({
   variables:{sleepHours:parseInt(hoursOfSleep)}
 })
-const {data:sleepQuality}=addQuality({
+
+const test =addQuality({
   variables:{sleepQuality:parseInt(qualityOfSleep)}
 })
 
-console.log(sleepQuality)
+console.log(sleepDuration);
+console.log(test);
+
   };
 
   // const handleUpdate = (e) => {
@@ -45,35 +49,7 @@ console.log(sleepQuality)
   // };
 
   return (
-    // <div>
-    //   <h2>Forum</h2>
-    //   <form onSubmit={handleSubmit}>
-    //     <div>
-    //       <label>Date:</label>
-    //       <DatePicker selected={selectedDate} onChange={handleDateChange} />
-    //     </div>
 
-    //     <div>
-    //       <label>Quality of Sleep (1-5):</label>
-    //       <select value={qualityOfSleep} onChange={handleQualityChange}>
-    //         <option value={1}>1</option>
-    //         <option value={2}>2</option>
-    //         <option value={3}>3</option>
-    //         <option value={4}>4</option>
-    //         <option value={5}>5</option>
-    //       </select>
-    //     </div>
-
-    //     <div>
-    //       <label>Hours of Sleep:</label>
-    //       <input type="number" value={hoursOfSleep} onChange={handleHoursChange} />
-    //     </div>
-    //     <button type="submit" onClick={handleUpdate}>
-    //       Update
-    //     </button>
-    //     <button type="submit">Submit</button>
-    //   </form>
-    // </div>
     <div>
       <div className="about-page background-image">
         <div className="form-container">
