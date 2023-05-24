@@ -40,6 +40,13 @@ a:hover{
   margin: 10px; 
 }
 /* Sleep-Input page */
+.form-container {
+  background-color: #7e7d7d85;
+  border-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
 
 .about-page {
   align-items: center;
