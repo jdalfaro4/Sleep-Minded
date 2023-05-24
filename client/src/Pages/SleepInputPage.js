@@ -63,7 +63,7 @@ const SleepInputPage = () => {
     // </div>
     <div>
       <div className="about-page background-image">
-        <div>
+        <div className="form-container">
           <h2 className="hero about">How did you sleep?</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-row question-container">
