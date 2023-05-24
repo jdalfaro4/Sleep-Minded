@@ -31,22 +31,16 @@ export const ADD_USER = gql`
 
 export const ADD_DURATION = gql`
   mutation AddDuration($sleepHours: Int!) {
-    addDuration(sleepHours: $sleepHours) {
-      duration {
-        sleepHours
-        _id
+    createDuration(sleepHours: $sleepHours) {
+      sleepHours
       }
-    }
   }
 `;
 
 export const ADD_QUALITY = gql`
   mutation AddQuality($sleepQuality: Int!) {
-    addQuality(sleepQuality: $sleepQuality) {
-      quality {
-        sleepQuality
-        _id
-      }
+    createQuality(quality: $sleepQuality) {
+      quality
     }
   }
 `;

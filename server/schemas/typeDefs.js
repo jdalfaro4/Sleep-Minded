@@ -33,7 +33,8 @@ const typeDefs = gql`
   }
   type Mutation {
      addUser(email: String!, password: String!): Auth
-    createDuration(sleepHours: Int!, sleepQuality: Int!): Duration
+    createDuration(sleepHours: Int!): Duration
+    createQuality(quality: Int!): Quality
     login(email: String!, password: String!): Auth
   }
 `;

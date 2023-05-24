@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
-
+import { useMutation } from '@apollo/client';
+import { ADD_DURATION, ADD_QUALITY } from '../utils/mutations';
 
 const SleepInputPage = () => {
   const [selectedDate, setSelectedDate] = useState('');
   const [qualityOfSleep, setQualityOfSleep] = useState('');
   const [hoursOfSleep, setHoursOfSleep] = useState('');
+
+const [addDuration, {error}]=useMutation(ADD_DURATION);
+const [addQuality, {err}]=useMutation(ADD_QUALITY);
+
+
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -21,9 +26,17 @@ const SleepInputPage = () => {
     setHoursOfSleep(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Submitted data:', selectedDate, qualityOfSleep, hoursOfSleep);
+const {data:sleepDuration}=addDuration({
+  variables:{sleepHours:parseInt(hoursOfSleep)}
+})
+const {data:sleepQuality}=addQuality({
+  variables:{sleepQuality:parseInt(qualityOfSleep)}
+})
+
+console.log(sleepQuality)
   };
 
   // const handleUpdate = (e) => {

@@ -52,10 +52,15 @@ const resolvers = {
     },
 
     createDuration: async (_parent, args) => {
-
+console.log(args);
       const duration = await Duration.create(args);
       return duration;
     },
+    createQuality: async (_parent, args) => {
+      console.log(args);
+            const quality = await Quality.create(args);
+            return quality;
+          },
   },
 };
 
