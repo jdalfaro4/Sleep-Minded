@@ -55,8 +55,8 @@ const Login = (props) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
+      <div className="col-lg-10 col-md-8 col-sm-6 login-center">
+        <div className="card bg-light">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
             {data ? (
@@ -83,7 +83,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="btn btn-block btn-info border border-primary"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -97,13 +97,17 @@ const Login = (props) => {
                 {error.message}
               </div>
             )}
+
+            <h5 className="d-flex justify-content-center align-items-center">       
+            <div className="question d-flex align-items-center">Not A Member?</div>
             <button
-                  className="btn btn-block btn-info"
+                  className="create-btn btn btn-link"
                   style={{ cursor: 'pointer' }}
                   onClick={handleSignUpClick}
-                >
-                  Sign Up
+            >Create An Account
             </button>
+          </h5>
+
           </div>
         </div>
       </div>

@@ -8,6 +8,12 @@
   background-attachment: fixed; 
 }
 
+/* HOME */
+.burger-btn {
+  background-color: white !important;
+  margin-right: 10px;
+}
+
 /* Navbar */
 
 .nav-container{
@@ -96,6 +102,24 @@ align-items: center;
     padding: 10px; 
   }
 
+  .form-input {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .login-center {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+
+
+
   /* Chart */
 
   .line-container{
@@ -136,8 +160,12 @@ align-items: center;
 
   .question{
     font-size: 15px; 
+    margin-top: 15px;
   }
 
+  .create-btn {
+    margin-left: 5px;
+  }
 
   /* Media Queries for screens larger than mobile*/
 @media screen and (min-width: 900px) { 
