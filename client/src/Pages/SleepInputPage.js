@@ -26,10 +26,10 @@ const SleepInputPage = () => {
     console.log('Submitted data:', selectedDate, qualityOfSleep, hoursOfSleep);
   };
 
-  const handleUpdate = (e) => {
-    e.preventDefault();
-    console.log('Updated data:', selectedDate, qualityOfSleep, hoursOfSleep);
-  };
+  // const handleUpdate = (e) => {
+  //   e.preventDefault();
+  //   console.log('Updated data:', selectedDate, qualityOfSleep, hoursOfSleep);
+  // };
 
   return (
     // <div>
@@ -69,7 +69,7 @@ const SleepInputPage = () => {
             <div className="form-row question-container">
               <div className="about-form container">
                 <div className="row">
-                  <label class="col" style={{ paddingRight: 0 }}>Date:</label>
+                  <label class="col date-label">Date:</label>
                   <div className="col" style={{ padding: 0 }}>
                     <DatePicker className="col datepicker" selected={selectedDate} onChange={handleDateChange} />
                   </div>
@@ -80,12 +80,12 @@ const SleepInputPage = () => {
               <div className="form-row about-form container">
                 <div className="row">
                   <label className="mr-sm-2 sr-only col">Quality of Sleep (1-5):</label>
-                  <select value={qualityOfSleep} onChange={handleQualityChange} className="custom-select mr-sm-2 col">
-                    <option value={1}>1</option>
+                  <select value={qualityOfSleep} onChange={handleQualityChange} className="custom-select mr-sm-2 col quality">
+                    <option value={1}>1 (worst)</option>
                     <option value={2}>2</option>
-                    <option value={3}>3</option>
+                    <option value={3}>3 (neutral)</option>
                     <option value={4}>4</option>
-                    <option value={5}>5</option>
+                    <option value={5}>5 (best)</option>
                   </select>
                 </div>
               </div>
@@ -100,7 +100,7 @@ const SleepInputPage = () => {
             </div>
           </form>
           <div className="d-flex flex-column align-items-center justify-content-center">
-            <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input>
+            {/* <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input> */}
             <input className="btn btn-primary submit" type="submit" onClick={handleSubmit} value="Submit"></input>
           </div>
         </div>
