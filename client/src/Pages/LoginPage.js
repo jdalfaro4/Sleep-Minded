@@ -57,7 +57,7 @@ const Login = (props) => {
     <main className="flex-row justify-center mb-4">
       <div className="col-lg-10 col-md-8 col-sm-6 login-center">
         <div className="card bg-light">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+          <h4 className="card-header bg-light text-dark p-2">Login</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -68,7 +68,7 @@ const Login = (props) => {
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Your email"
+                  placeholder="Email"
                   name="email"
                   type="email"
                   value={formState.email}
@@ -83,7 +83,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info border border-primary"
+                  className="btn btn-primary"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -98,20 +98,20 @@ const Login = (props) => {
               </div>
             )}
 
-            <h5 className="d-flex justify-content-center align-items-center">       
-            <div className="question d-flex align-items-center">Not A Member?</div>
-            <button
-                  className="create-btn btn btn-link"
-                  style={{ cursor: 'pointer' }}
-                  onClick={handleSignUpClick}
-            >Create An Account
-            </button>
-          </h5>
+            <h5 className="d-flex justify-content-center align-items-center">
+              <div className="question d-flex align-items-center">Not a member?</div>
+              <button
+                className="create-btn btn btn-link"
+                style={{ cursor: 'pointer' }}
+                onClick={handleSignUpClick}
+              >Create an account.
+              </button>
+            </h5>
 
           </div>
         </div>
       </div>
-    </main>
+    </main >
   );
 };
 

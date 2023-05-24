@@ -33,7 +33,7 @@ const Signup = () => {
 
             Auth.login(data.addUser.token);
         } catch (e) {
-            if(e.networkError){
+            if (e.networkError) {
                 console.log(e.networkError)
             }
             console.error(e);
@@ -42,9 +42,9 @@ const Signup = () => {
 
     return (
         <main className="flex-row justify-center mb-4">
-            <div className="col-lg-10 col-md-8 col-sm-6 login-center">
+            <div className="login-center">
                 <div className="card bg-light">
-                    <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+                    <h4 className="card-header bg-light text-dark p-2">Sign Up</h4>
                     <div className="card-body">
                         {data ? (
                             <p>
@@ -55,7 +55,7 @@ const Signup = () => {
                             <form onSubmit={handleFormSubmit}>
                                 <input
                                     className="form-input"
-                                    placeholder="Your email"
+                                    placeholder="Email"
                                     name="email"
                                     type="email"
                                     value={formState.email}
@@ -70,7 +70,7 @@ const Signup = () => {
                                     onChange={handleChange}
                                 />
                                 <button
-                                    className="btn btn-block btn-info border border-primary"
+                                    className="btn btn-primary"
                                     style={{ cursor: 'pointer' }}
                                     type="submit"
                                 >

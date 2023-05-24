@@ -35,10 +35,6 @@ a:hover{
     text-decoration: solid; 
 }
 
-.datepicker{
-  width: 100%; 
-
-}
 
 .submit{
   margin: 10px; 
@@ -67,7 +63,7 @@ about-inner {
   color: white; 
   line-height: 1.1;
   padding: 20px 10px;
-  margin-top: 100px; 
+  margin-top: 50px; 
 }
 
 
@@ -78,12 +74,31 @@ about-inner {
     font-size: 20px; 
   }
 
+  .date-label{
+    padding-right: 0px; 
+    padding-left: 0px; 
+    position: relative; 
+    left: 11px;
+  }
+
+  .datepicker{
+    width: 100%; 
+    padding-left: 10px; 
+    border-radius: 0.375rem; 
+  
+  }
+
+  .quality{
+    border-radius: 0.375rem; 
+  }
   .hours{
     width: 100px; 
+    font-size: 20px; 
   }
 
 .submit{
-align-items: center; 
+position: relative; 
+left: 20px; 
 }
   
 
@@ -105,13 +120,18 @@ align-items: center;
   .form-input {
     display: block;
     margin: auto;
-    margin-top: 10px;
+    margin: 20px 40px 20px 0px; 
+    padding-left: 10px; 
+    width: 100%;
+    border: none; 
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3; 
   }
 
   .login-center {
     margin: auto;
     margin-top: 50px;
     text-align: center;
+    width: 50%; 
   }
 
   .btn {
@@ -126,7 +146,7 @@ align-items: center;
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    padding-top: 100px; 
+    padding-top: 50px; 
   }
   .line{
     width: 400px !important; 
@@ -164,7 +184,10 @@ align-items: center;
   }
 
   .create-btn {
-    margin-left: 5px;
+    font-size: 15px;
+    position: relative; 
+    top: 2px; 
+    right: 3px; 
   }
 
   /* Media Queries for screens larger than mobile*/
@@ -189,6 +212,13 @@ align-items: center;
     text-align: left;
     margin: 130px 0 0 50px;
     width: 800px;
+}
+
+.login-center{
+  margin: auto;
+    margin-top: 50px;
+    text-align: center;
+  width: 400px; 
 }
 
 .form-row{
