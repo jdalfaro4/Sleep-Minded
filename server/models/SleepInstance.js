@@ -16,9 +16,9 @@ const sleepInstanceSchema = new Schema({
     required: true,
   },
 
-sleepDate: {
+  sleepDate: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
 });
 

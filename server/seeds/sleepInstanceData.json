@@ -1,0 +1,18 @@
+[
+{
+"quality": 5,
+"sleepHours":10
+},
+{
+  "quality": 6,
+  "sleepHours":9
+  },
+  {
+    "quality": 7,
+    "sleepHours":11
+    },
+    {
+      "quality": 8,
+      "sleepHours":12
+      }
+]
