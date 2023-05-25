@@ -5,6 +5,7 @@ import SleepInputPage from './SleepInputPage';
 import Chart from './Chart';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
+import Signup from './Signup';
 
 const HomePage = () => {
   const [activeComponent, setActiveComponent] = useState('LoginPage');
@@ -24,11 +25,14 @@ const HomePage = () => {
     case 'SleepInputPage':
       componentToRender = <SleepInputPage />;
       break;
+    case 'SignupPage':
+      componentToRender = <Signup />;
+      break;
     case 'Chart':
       componentToRender = <Chart />;
       break;
     default:
-      componentToRender = <LoginPage />;
+      componentToRender = <SleepInputPage />;
   }
 
   return (
@@ -66,5 +70,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
 

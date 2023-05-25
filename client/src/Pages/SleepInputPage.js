@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-// import { useMutation } from '@apollo/client';
-// import { ADD_DURATION, ADD_QUALITY } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { ADD_SLEEP_INSTANCE_MUTATION  } from '../utils/mutations';
 
 const SleepInputPage = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -10,7 +10,7 @@ const SleepInputPage = () => {
   const [hoursOfSleep, setHoursOfSleep] = useState('');
 
 
-// const [addDuration, {error}]=useMutation(ADD_DURATION);
+const [addSleepInstance, {error}]=useMutation(ADD_SLEEP_INSTANCE_MUTATION);
 // const [addQuality, {err}]=useMutation(ADD_QUALITY);
 
 
@@ -34,10 +34,10 @@ console.log(`HoursOfSleep: ${hoursOfSleep}`, )
     e.preventDefault();
 
 
-// const {data:sleepDuration}=addDuration({
-//   variables:{sleepHours:parseInt(hoursOfSleep)}
-// })
-// console.log("here");
+const {data:sleepy}=addSleepInstance({
+  variables:{sleepHours:parseInt(hoursOfSleep)}
+})
+
 // console.log(sleepDuration);
 
 // const test =addQuality({

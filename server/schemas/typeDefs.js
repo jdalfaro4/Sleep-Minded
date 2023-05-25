@@ -26,15 +26,16 @@ const typeDefs = gql`
   type Query {
     users: User
 user(email: String!):User
-sleepInstances(email: String): [SleepInstance]
-
+sleepInstance(email: String): [SleepInstance]
+me: User
   }
 
   type Mutation {
     addUser(email: String!, password: String!): Auth
-    AddSleepInstance(quality: Int!, sleepHours: Int!): SleepInstance
+    addSleepInstance(quality: Int!, sleepHours: Int!): SleepInstance
     login(email: String!, password: String!): Auth
   }
 `;
 
 module.exports = typeDefs;
+

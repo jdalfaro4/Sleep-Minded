@@ -9,6 +9,7 @@ db.once("open", async () => {
   try {
     await SleepInstance.deleteMany({});
     await User.deleteMany({});
+
     const users = await User.create(userData);
     for (let i = 0; i < sleepInstanceData.length; i++) {
       for (let user of users) {

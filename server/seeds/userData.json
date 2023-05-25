@@ -1,14 +1,17 @@
 [
     {
-
+      "user":"Ricky Bobby1",
       "email": "bkernighan@techfriends.dev",
       "password": "password01"
     },
     {
+"user": "john doe",
       "email": "mkanatalexander@techfriends.dev",
       "password": "password02"
     },
 {
+
+"user":"Jane Doe",
     "email": "kbeck@techfriends.dev",
     "password": "password04"
 }

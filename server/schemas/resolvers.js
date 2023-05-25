@@ -10,12 +10,12 @@ const resolvers = {
     user: async (parent, { _id }) => {
       return User.findOne({ _id }).populate('sleepHours, quality');
     },
-    SleepInstances: async (parent, { User }) => {
-      const params = User ? { User } : {};
-      return SleepInstance.find(params).sort({ createdAt: -1 });
-    },
+    // SleepInstances: async (parent, { User }) => {
+    //   const params = User ? { User } : {};
+    //   return SleepInstance.find(params).sort({ createdAt: -1 });
+    // },
 
-    SleepInstance: async (parent, { sleepInstanceId }) => {
+    sleepInstance: async (parent, { sleepInstanceId }) => {
       return SleepInstance.findOne({ _id: sleepInstanceId });
     },
     me: async (parent, args, context) => {

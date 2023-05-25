@@ -22,26 +22,13 @@ export const ADD_USER = gql`
   }
 `;
 
-// export const ADD_SLEEP = gql`
-//   mutation AddSleep($quality: Int!, $sleepHours: Int!) {
-//   CreateSleep(quality: $quality, sleepHours: $sleephours) {
-//     quality
-//     sleepHours
-//   }
-// `;
 
-// export const ADD_DURATION = gql`
-//   mutation AddDuration($sleepHours: Int!) {
-//     createDuration(sleepHours: $sleepHours) {
-//       sleepHours
-//     }
-//   }
-// `;
+export const ADD_SLEEP_INSTANCE_MUTATION = gql`
+  mutation AddSleepInstance($sleepHours: Int!) {
+    addSleepInstance(sleepHours: $sleepHours) {
+      sleepDuration
+    }
+  }
+`;
 
-// export const ADD_QUALITY = gql`
-//   mutation AddQuality($sleepQuality: Int!) {
-//     createQuality(quality: $sleepQuality) {
-//       quality
-//     }
-//   }
-// `;
+
