@@ -17,7 +17,7 @@ db.once("open", async () => {
         await SleepInstance.create(sleepInstance);
       }
     }
-    console.log("Technologies seeded!");
+
     process.exit(0);
   } catch (e) {
     console.log(e);

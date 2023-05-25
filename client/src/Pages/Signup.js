@@ -24,7 +24,7 @@ const Signup = () => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log(formState);
+
 
         try {
             const { data } = await AddUser({
@@ -34,7 +34,7 @@ const Signup = () => {
             Auth.login(data.addUser.token);
         } catch (e) {
             if (e.networkError) {
-                console.log(e.networkError)
+
             }
             console.error(e);
         }

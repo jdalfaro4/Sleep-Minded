@@ -1,36 +1,38 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type Quality {
-    _id: ID
-    quality: Int
-  }
-
-  type Duration {
-    sleepHours: Int
-  }
 
   type User {
     _id: ID
     email: String
-    duration: Duration
-    quality: Quality
+    quality: Int
+    sleepHours: Int
+    user_id: User
   }
+
+  type SleepInstance {
+    _id: ID
+    quality: Int
+    sleepHours: Int
+    createdAt: String
+    user_id: User
+    }
+
   type Auth {
     token: ID
     user: User
   }
 
   type Query {
-    user: User
-    quality(_id: ID!): Quality
-    duration(_id: ID!): Duration
+    users: User
+user(email: String!):User
+sleepInstances(email: String): [SleepInstance]
+
   }
 
   type Mutation {
-     addUser(email: String!, password: String!): Auth
-    createDuration(sleepHours: Int!): Duration
-    createQuality(quality: Int!): Quality
+    addUser(email: String!, password: String!): Auth
+    AddSleepInstance(quality: Int!, sleepHours: Int!): SleepInstance
     login(email: String!, password: String!): Auth
   }
 `;

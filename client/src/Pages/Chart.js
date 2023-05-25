@@ -5,7 +5,7 @@
 import React from 'react';
 import { Line } from "react-chartjs-2";
 const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-const yValues = [8, 9, 7, 8, 6, 9, 6, 7, 8, 9, 8, 6];
+const yValues = [12, 9, 7, 8, 6, 9, 6, 7, 8, 9, 8, 6];
 
 
 export default function Chart() {

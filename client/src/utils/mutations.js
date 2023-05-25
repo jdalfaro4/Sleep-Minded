@@ -12,15 +12,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser(
-
-    $email: String!
-    $password: String!
-  ) {
-    addUser(
-      email: $email
-      password: $password
-    ) {
+  mutation addUser($email: String!, $password: String!) {
+    addUser(email: $email, password: $password) {
       token
       user {
         _id
@@ -29,18 +22,26 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_DURATION = gql`
-  mutation AddDuration($sleepHours: Int!) {
-    createDuration(sleepHours: $sleepHours) {
-      sleepHours
-      }
-  }
-`;
+// export const ADD_SLEEP = gql`
+//   mutation AddSleep($quality: Int!, $sleepHours: Int!) {
+//   CreateSleep(quality: $quality, sleepHours: $sleephours) {
+//     quality
+//     sleepHours
+//   }
+// `;
 
-export const ADD_QUALITY = gql`
-  mutation AddQuality($sleepQuality: Int!) {
-    createQuality(quality: $sleepQuality) {
-      quality
-    }
-  }
-`;
+// export const ADD_DURATION = gql`
+//   mutation AddDuration($sleepHours: Int!) {
+//     createDuration(sleepHours: $sleepHours) {
+//       sleepHours
+//     }
+//   }
+// `;
+
+// export const ADD_QUALITY = gql`
+//   mutation AddQuality($sleepQuality: Int!) {
+//     createQuality(quality: $sleepQuality) {
+//       quality
+//     }
+//   }
+// `;

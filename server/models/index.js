@@ -1,7 +1,7 @@
-const SleepInstance = require('./SleepInstance');
-// const Duration = require('./Duration');
 const User = require('./user');
+const SleepInstance = require('./SleepInstance');
 
 
-module.exports = { SleepInstance, User };
+
+module.exports = { User, SleepInstance };
 
