@@ -3,6 +3,9 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useMutation } from '@apollo/client';
 import { ADD_DURATION, ADD_QUALITY } from '../utils/mutations';
+import HomePage from './HomePage';
+import { Link } from 'react-router-dom';
+// import Navbar from './Navbar';
 
 const SleepInputPage = () => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -12,7 +15,9 @@ const SleepInputPage = () => {
 const [addDuration, {error}]=useMutation(ADD_DURATION);
 const [addQuality, {err}]=useMutation(ADD_QUALITY);
 
-
+  const handleGoHome = () => {
+    return <HomePage/>
+  }
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -43,6 +48,7 @@ console.log(test);
 
   };
 
+  
   // const handleUpdate = (e) => {
   //   e.preventDefault();
   //   console.log('Updated data:', selectedDate, qualityOfSleep, hoursOfSleep);
@@ -91,6 +97,11 @@ console.log(test);
           <div className="d-flex flex-column align-items-center justify-content-center">
             {/* <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input> */}
             <input className="btn btn-primary submit" type="submit" onClick={handleSubmit} value="Submit"></input>
+            <div className="d-flex flex-column align-items-center justify-content-center">
+            {/* <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input> */}
+            <Link to="/"><input className="btn btn-primary submit" type="submit" onClick={handleGoHome} value="Go Home"></input></Link>
+          
+            </div>
           </div>
         </div>
 
