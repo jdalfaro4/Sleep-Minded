@@ -10,7 +10,7 @@ import SignupPage from './Pages/Signup';
 import HomePage from './Pages/HomePage';
 import CustomChart from './Pages/Chart';
 import { CategoryScale } from "chart.js";
-import Chart from "Chart.js/auto";
+import Chart from "./Pages/Chart.js/auto";
 Chart.register(CategoryScale);
 
 const httpLink = createHttpLink({
