@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.493eaf10.css",
+    "main.js": "/static/js/main.9167d54e.js",
+    "static/js/496.b8d3208e.chunk.js": "/static/js/496.b8d3208e.chunk.js",
+    "static/media/StarrySky.jpg": "/static/media/StarrySky.73a75c8bc0ba8a07fc3a.jpg",
+    "index.html": "/index.html",
+    "main.493eaf10.css.map": "/static/css/main.493eaf10.css.map",
+    "main.9167d54e.js.map": "/static/js/main.9167d54e.js.map",
+    "496.b8d3208e.chunk.js.map": "/static/js/496.b8d3208e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.493eaf10.css",
+    "static/js/main.9167d54e.js"
+  ]
+}
