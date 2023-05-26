@@ -1,18 +1,30 @@
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { useMutation } from "@apollo/client";
+
+  // const [addQuality, {err}]=useMutation(ADD_QUALITY);
+
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { useMutation } from '@apollo/client';
+import { ADD_DURATION, ADD_QUALITY } from '../utils/mutations';
+import HomePage from './HomePage';
+import { Link } from 'react-router-dom';
 import { ADD_SLEEP_INSTANCE_MUTATION } from "../utils/mutations";
+// import Navbar from './Navbar';
 
 const SleepInputPage = () => {
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState('');
   const [qualityOfSleep, setQualityOfSleep] = useState(0);
   const [hoursOfSleep, setHoursOfSleep] = useState(0);
-
-  const [addSleepInstance, { error }] = useMutation(
+const [addSleepInstance, { error }] = useMutation(
     ADD_SLEEP_INSTANCE_MUTATION
   );
-  // const [addQuality, {err}]=useMutation(ADD_QUALITY);
+// const [addDuration, {error}]=useMutation(ADD_DURATION);
+// const [addQuality, {err}]=useMutation(ADD_QUALITY);
+
+  const handleGoHome = () => {
+    return <HomePage/>
+  }
+
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -47,6 +59,7 @@ console.log(qualityOfSleep);
     // })
   };
 
+  
   // const handleUpdate = (e) => {
   //   e.preventDefault();
   //   console.log('Updated data:', selectedDate, qualityOfSleep, hoursOfSleep);
@@ -106,12 +119,14 @@ console.log(qualityOfSleep);
           </form>
           <div className="d-flex flex-column align-items-center justify-content-center">
             {/* <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input> */}
-            <input
-              className="btn btn-primary submit"
-              type="submit"
-              onClick={handleSubmit}
-              value="Submit"
-            ></input>
+
+            <input className="btn btn-primary submit" type="submit" onClick={handleSubmit} value="Submit"></input>
+            <div className="d-flex flex-column align-items-center justify-content-center">
+            {/* <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input> */}
+            <Link to="/"><input className="btn btn-primary submit" type="submit" onClick={handleGoHome} value="Go Home"></input></Link>
+          
+            </div>
+
           </div>
         </div>
       </div>

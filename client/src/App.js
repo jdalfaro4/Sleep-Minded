@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+
 import LoginPage from './Pages/LoginPage';
 import SleepInputPage from './Pages/SleepInputPage';
 import SignupPage from './Pages/Signup';
@@ -26,7 +28,11 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const client = new ApolloClient({
+
   link: authLink.concat(httpLink),
+
+//   uri: '/graphql',
+
   cache: new InMemoryCache(),
 });
 
