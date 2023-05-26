@@ -22,13 +22,13 @@ export const ADD_USER = gql`
   }
 `;
 
-
 export const ADD_SLEEP_INSTANCE_MUTATION = gql`
-  mutation AddSleepInstance($sleepHours: Int!) {
-    addSleepInstance(sleepHours: $sleepHours) {
-      sleepDuration
+  mutation AddSleepInstance($quality: Int!, $sleepHours: Int!) {
+    addSleepInstance(quality: $quality, sleepHours: $sleepHours) {
+      _id
+      quality
+      sleepDate
+      sleepHours
     }
   }
 `;
-
-

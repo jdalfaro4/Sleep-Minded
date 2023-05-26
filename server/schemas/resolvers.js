@@ -10,10 +10,6 @@ const resolvers = {
     user: async (parent, { _id }) => {
       return User.findOne({ _id }).populate('sleepHours, quality');
     },
-    // SleepInstances: async (parent, { User }) => {
-    //   const params = User ? { User } : {};
-    //   return SleepInstance.find(params).sort({ createdAt: -1 });
-    // },
 
     sleepInstance: async (parent, { sleepInstanceId }) => {
       return SleepInstance.findOne({ _id: sleepInstanceId });
@@ -52,25 +48,20 @@ const resolvers = {
       return { token, user };
     },
 
-    addSleepInstance: async (parent, { quality, sleepHours }) => {
-      if (context.user) {
-      const sleepInstance = await sleepInstance.create({
+    addSleepInstance: async (parent, { quality, sleepHours }, context) => {
+          if (context.user) {
+        const sleepInstance = await SleepInstance.create({
         sleepHours,
-        sleepHours: context.user.user,
+        quality,
       });
-
       await User.findOneAndUpdate(
         { _id: context.user._id },
-        { $addToSet: { sleepInstance: sleepInstance._id } }
+        { $addToSet: { sleepInstance } }
       );
 
-      return SleepInstance;
+      return sleepInstance;
     }
     throw new AuthenticationError('You need to be logged in!');
-
-      // console.log(quality, sleepHours);
-      // const newSleep = await ;
-      // console.log(newSleep)
 
 
     },

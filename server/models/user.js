@@ -21,8 +21,8 @@ const userSchema = new Schema({
   },
   sleepInstance: [
     {
-      type: Number,
-      ref: 'user',
+      type: Schema.Types.ObjectId,
+      ref: 'SleepInstance',
     },
   ],
 });
