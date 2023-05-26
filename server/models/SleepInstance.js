@@ -1,4 +1,5 @@
-const { Schema, DataTypes, model } = require("mongoose");
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const sleepInstanceSchema = new Schema({
   quality: {
@@ -6,19 +7,14 @@ const sleepInstanceSchema = new Schema({
     required: true,
     unique: false,
   },
-  user_id: {
-    type: Schema.Types.ObjectId,
-    ref: "user",
-  },
-
   sleepHours: {
     type: Number,
     required: true,
   },
-
-sleepDate: {
+  sleepDate: {
     type: Date,
-    default: Date.now
+    get: (timestamp) => dateFormat(timestamp),
+    default: () => Date.now()
   },
 });
 
