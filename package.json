@@ -7,7 +7,7 @@
   },
   "scripts": {
     "install": "cd server && npm i && cd ../client && npm i",
-    "start": "react-scripts start",
+    "start": "node server/server.js",
     "build": "cd client && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
