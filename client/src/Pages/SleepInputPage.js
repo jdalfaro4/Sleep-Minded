@@ -119,7 +119,7 @@ console.log(qualityOfSleep);
           </form>
           <div className="d-flex flex-column align-items-center justify-content-center">
             {/* <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input> */}
-
+            
             <input className="btn btn-primary submit" type="submit" onClick={handleSubmit} value="Submit"></input>
             <div className="d-flex flex-column align-items-center justify-content-center">
             {/* <input className="btn btn-primary submit" type="submit" onClick={handleUpdate} value="Update"></input> */}
